@@ -1,11 +1,40 @@
+const path = require('path');
 const fs = require('fs');
-const byteArray = [];
+const testDirectory= path.join(__dirname, './test/testData');
+const inputDirectory = process.argv[2];
 
-fs.readFile('./rawData.txt', (err, buffer) => {
-  if (err) throw err;
-  buffer.forEach(function(byte) {
-    byteArray.push(byte);
-  });
+// main executive
+printFirstBytes(inputDirectory);
+
+function printFirstBytes(directory = testDirectory) {
   
-  console.log(byteArray);
-});
+  if (directory === testDirectory) {
+    console.log('no input given, running test directory');
+  }
+  fs.readdir(directory, (err, allFilePaths) => {
+    if (err) throw err;
+    const firstBytes = [];
+    var counter = 0;
+    
+    allFilePaths.forEach((singlePath, index) => {
+      const fullPath = path.join(directory, singlePath);
+
+      fs.readFile(fullPath, (err, content) => {
+        if (err) throw err;
+        
+        firstBytes[index] = content[0];
+        
+        // extra credit
+        console.log(allFilePaths[index], firstBytes[index]);
+        
+        counter++;
+        
+        if (counter === allFilePaths.length) {
+          console.log('total:', firstBytes);
+        }
+      });
+    });
+  });
+}
+
+module.exports.printFirstBytes = printFirstBytes;
