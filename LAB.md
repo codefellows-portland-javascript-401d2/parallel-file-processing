@@ -22,7 +22,7 @@ order issue.
 
 You need to have tests that verify the results.  
 
-Your code should pass the **.eslintrc** included in this repository.  
+Use package.json. Lint, include your .eslint
 
 Your submission should be a link to your pull request.  
 
