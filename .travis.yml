@@ -1,3 +1,6 @@
 language: node_js
-node:
-  - "6"
+
+# test on two node.js versions: 5 and 6
+node_js:
+  - 5
+  - 6
