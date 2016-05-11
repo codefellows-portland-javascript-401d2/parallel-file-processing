@@ -1,0 +1,34 @@
+{
+  "name": "parallel-file-processing",
+  "version": "1.0.0",
+  "description": "A Javascript module that takes a list of filenames and retrieves the first byte of each file in parallel, but returning the results as an array in the same order as the list of files that were provided.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "lint": "gulp run-lint",
+    "test": "gulp run-tests",
+    "watch": "gulp watch-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jluangphasy/parallel-file-processing.git"
+  },
+  "author": "Johnny Luangphasy (https://github.com/jluangphasy)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jluangphasy/parallel-file-processing/issues"
+  },
+  "homepage": "https://github.com/jluangphasy/parallel-file-processing#readme",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
