@@ -12,4 +12,10 @@ var fileContent =  function (file, callback){
   });
 };
 
+var fileChar = function(content, callback){
+  var char = content.slice(0,1);
+  callback(null, char);
+};
+
 exports.fileContent = fileContent;
+exports.fileChar = fileChar;

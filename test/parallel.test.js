@@ -14,8 +14,12 @@ describe('file reader', function(){
 
   });
 
-
-  //it('retrieves first byte of file')
+  it('retrieves first char of file', done =>{
+    para.fileChar('meow', (err, data) => {
+      assert.equal( data, 'm');
+      done();
+    });
+  });
 
   //it('returns an array in file order')
 
