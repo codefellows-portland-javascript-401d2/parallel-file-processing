@@ -1,0 +1,14 @@
+{
+  "name": "parallel-processing",
+  "version": "1.0.0",
+  "description": "uses readFile() to process multiple files in parallel",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "@DonChatelain",
+  "license": "ISC"
+}
