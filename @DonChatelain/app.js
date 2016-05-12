@@ -9,13 +9,10 @@ if (process.argv[2]) {
   inputDirectory = path.join(__dirname, 'data');
 }
 
+// Executive
 getBytes.getFirstBytes(inputDirectory, function(results) {
   bonusPrint(inputDirectory, results);
 });
-
-function simplePrint(data) {
-  console.log(data);
-}
 
 function bonusPrint(directory, data) {
   fs.readdir(directory, (err, fileNames) => {

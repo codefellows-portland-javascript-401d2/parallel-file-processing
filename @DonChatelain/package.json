@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint"
+    "test": "npm run unit-test && npm run lint",
+    "unit-test": "mocha",
+    "lint": "eslint *.js **/*.js"
   },
   "author": "@DonChatelain",
   "license": "ISC"

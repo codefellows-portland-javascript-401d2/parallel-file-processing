@@ -1,6 +1,4 @@
 const assert = require('assert');
-const path = require('path');
-const fs = require('fs');
 const es = require('child_process').execSync;
 const getBytes = require('../getBytes');
 
@@ -21,7 +19,12 @@ describe('reading test data file content in testData directory ', () => {
     assert.deepEqual(actual, expected); 
   });
   
-
+  it('defaults to target /data/ folder if no argument in CLI', () => {
+    const actual = es('node app.js').toString().trim();
+    const expected = 'data-a 83\ndata-b 65\ndata-c 82\ndata-d 66\ndata-e 69';
+    
+    assert.deepEqual(actual, expected); 
+  });
   
 });
 
