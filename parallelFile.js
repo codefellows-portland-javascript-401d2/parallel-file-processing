@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const getFiles = (directory, callback) => {
+const getFiles = (directory = 'files', callback) => {
   fs.readdir(directory, (error, files) => {
     if (error) return callback(error);
 

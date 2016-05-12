@@ -16,6 +16,10 @@ npm install
 
 ## Commands
 
+Get files
+<br>
+`node index.js`, `node index.js files`, or `node index.js ./files`
+
 Run lint
 <br>
 `npm run lint`
