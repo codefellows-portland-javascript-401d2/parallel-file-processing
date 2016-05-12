@@ -1,0 +1,20 @@
+{
+  "name": "parallel-processing",
+  "version": "1.0.0",
+  "description": "uses readFile() to process multiple files in parallel",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run unit-test && npm run lint",
+    "unit-test": "mocha",
+    "lint": "eslint *.js **/*.js"
+  },
+  "author": "@DonChatelain",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "mocha": "^2.4.5"
+  }
+}
