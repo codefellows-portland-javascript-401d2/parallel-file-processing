@@ -4,7 +4,7 @@ const assert = require('assert');
 const para = require('../parallel');
 
 
-describe('file reader', function(){
+describe('file reader', () => {
 
   it('reads content', done => {
     para.fileContent('cats.txt', (err, data) => {
@@ -21,6 +21,13 @@ describe('file reader', function(){
     });
   });
 
-  //it('returns an array in file order')
+  it('takes file list, returns first char of contents in order', done => {
+    var input = ['beer.txt', 'cats.txt', 'yoda.txt'];
+    var expected = ['A', 'm', 'L'];
+    para.getFirstCharArr(input, (err, actual) => {
+      assert.deepEqual(actual, expected);
+      done();
+    });
+  });
 
 });

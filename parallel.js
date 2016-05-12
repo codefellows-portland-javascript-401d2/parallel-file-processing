@@ -17,5 +17,23 @@ var fileChar = function(content, callback){
   callback(null, char);
 };
 
+var getFirstCharArr = function(arr, callback){
+  var chars = [];
+  var count = arr.length;
+
+  arr.forEach(function(file){
+    fileContent(file, (err, contents) => {
+
+      fileChar(contents, (err, char) => {
+        chars.push(char);
+        if(!--count){
+          callback(null, chars);
+        }
+      });
+    });
+  });
+};
+
 exports.fileContent = fileContent;
 exports.fileChar = fileChar;
+exports.getFirstCharArr = getFirstCharArr;
