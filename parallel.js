@@ -33,7 +33,7 @@ var getFirstCharArr = function(arr, callback){
     });
   });
 };
-
+//above function works but things aren't being pushed to chars in input order
 exports.fileContent = fileContent;
 exports.fileChar = fileChar;
 exports.getFirstCharArr = getFirstCharArr;
