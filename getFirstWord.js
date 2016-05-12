@@ -1,45 +1,28 @@
-(function(module) {
-    var files = {};
+const fs = require('fs');
 
-    // const path = require('path');
-    const fs = require('fs');
-
-    function getFirstWord() {
-        // const folder = 'filesGoHere';    // name of folder we're looking in for files
-        const files = ['filesGoHere/alien.txt',
-                        'filesGoHere/batman.txt',
-                        'filesGoHere/cat.txt',
-                        'filesGoHere/dessert.txt',
-                        'filesGoHere/erb.txt',
-                        'filesGoHere/force.txt',
-                        'filesGoHere/tooReal.txt'];
-        const expected = ['You',
-                        'Ancient',
-                        'Catnipsum',
-                        'Cupcake',
-                        'Few',
-                        'I\'m',
-                        'This'];
-        var firstWord = files.map(function(filepath) {
-            fs.readFile(filepath, 'utf8', (err,firstWordComesOut) => {
-                if (err) throw err;
-                console.log('First Word of "' + filepath.split('/')[1] + '" file:     ', firstWordComesOut.split(' ')[0]);
-            });
+function getFirstWord(filenames, callback) {
+    var results = [];
+    filenames.forEach(function(file, index) {
+        fs.readFile(file, 'utf8', (err, firstWordComesOut) => {
+            if (err) {
+                callback(err);
+            }
+            results[index] = firstWordComesOut.split(' ')[0];
+            if (index == filenames.length - 1 && arrayIsFull(results)) {
+                callback(null, results);
+            }
         });
-        console.log('expected', expected);
-        console.log('firstWord', firstWord);
+    });
+}
+
+function arrayIsFull(arr) {
+    for (var a = 0; a < arr.length; a++) {
+        console.log('"' + arr[a] + '"');
+        if (arr[a] == '' || arr[a] == undefined) {
+            return false;
+        }
     }
-    console.log(getFirstWord);
+    return true;
+}
 
-    // var getResults = filesGoIn.map(function(filepath) {
-    //     fs.readFile(filepath, 'utf8',(err,firstWordComesOut)=> {
-    //         if (err) throw err;
-    //         console.log('First Word of "' + filepath.split('/')[1] + '" file:     ', firstWordComesOut.split(' ')[0]);
-    //         return firstWordComesOut.split(' ')[0];  // files(first word of each)ComeOut
-    //     });
-    // });
-
-
-
-    module.getFirstWord = getFirstWord;
-})(window);
+module.exports = getFirstWord;
