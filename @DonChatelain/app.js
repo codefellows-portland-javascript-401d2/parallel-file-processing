@@ -1,9 +1,13 @@
 const path = require('path');
 const fs = require('fs');
 const getBytes = require('./getBytes');
-const inputDirectory = path.join(__dirname, process.argv[2]);
+var inputDirectory;
 
-getBytes.getFirstBytes(inputDirectory, simplePrint);
+if (process.argv[2]) {
+  inputDirectory = path.join(__dirname, process.argv[2]);
+} else {
+  inputDirectory = path.join(__dirname, 'data');
+}
 
 getBytes.getFirstBytes(inputDirectory, function(results) {
   bonusPrint(inputDirectory, results);
