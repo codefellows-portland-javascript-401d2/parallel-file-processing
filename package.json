@@ -12,5 +12,9 @@
     "lint": "eslint *.js **/*.js"
   },
   "author": "@DonChatelain",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "mocha": "^2.4.5"
+  }
 }
