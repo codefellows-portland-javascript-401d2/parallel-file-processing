@@ -1,40 +1,25 @@
 const path = require('path');
 const fs = require('fs');
-const testDirectory= path.join(__dirname, './test/testData');
-const inputDirectory = process.argv[2];
+const getBytes = require('./getBytes');
+const inputDirectory = path.join(__dirname, process.argv[2]);
 
-// main executive
-printFirstBytes(inputDirectory);
+getBytes.getFirstBytes(inputDirectory, simplePrint);
 
-function printFirstBytes(directory = testDirectory) {
-  
-  if (directory === testDirectory) {
-    console.log('no input given, running test directory');
-  }
-  fs.readdir(directory, (err, allFilePaths) => {
+getBytes.getFirstBytes(inputDirectory, function(results) {
+  bonusPrint(inputDirectory, results);
+});
+
+function simplePrint(data) {
+  console.log(data);
+}
+
+function bonusPrint(directory, data) {
+  fs.readdir(directory, (err, fileNames) => {
     if (err) throw err;
-    const firstBytes = [];
-    var counter = 0;
-    
-    allFilePaths.forEach((singlePath, index) => {
-      const fullPath = path.join(directory, singlePath);
 
-      fs.readFile(fullPath, (err, content) => {
-        if (err) throw err;
-        
-        firstBytes[index] = content[0];
-        
-        // extra credit
-        console.log(allFilePaths[index], firstBytes[index]);
-        
-        counter++;
-        
-        if (counter === allFilePaths.length) {
-          console.log('total:', firstBytes);
-        }
-      });
+    fileNames.forEach(function(file, index) {
+      console.log(file, data[index]);
+      
     });
   });
 }
-
-module.exports.printFirstBytes = printFirstBytes;
