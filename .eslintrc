@@ -1,12 +1,13 @@
 {
    "settings": {
-    "ecmascript": 5
+    "ecmascript": 6
   },
   "ecmaFeatures": {
   },
   "env": {
     "browser": true,
-    "jquery": true
+    "jquery": true,
+    "es6": true
   },
   "rules": {
     "semi": 1,
