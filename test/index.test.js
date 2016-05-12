@@ -1,7 +1,7 @@
-const fs = require('fs');
+// const fs = require('fs');
 // const path = require('path');
 // const assert = require('assert');
-
+const getFirstWord = require('getFirstWord');
 
 
 
@@ -9,17 +9,9 @@ const fs = require('fs');
 
 describe('read files in folder -', () => {
     it('count files', done => {
-        const filesGoIn = ['filesGoHere/alien.txt', 'filesGoHere/batman.txt', 'filesGoHere/cat.txt', 'filesGoHere/dessert.txt', 'filesGoHere/erb.txt', 'filesGoHere/force.txt', 'filesGoHere/tooReal.txt'];
-        const expected = ['You', 'Ancient', 'Catnipsum', 'Cupcake', 'Few', 'I\'m', 'This'];
-        var getResults = filesGoIn.map(function(filepath) {
-            fs.readFile(filepath, 'utf8',(err,firstWordComesOut)=> {
-                if (err) throw err;
-                console.log('First Word of "' + filepath.split('/')[1] + '" file:     ', firstWordComesOut.split(' ')[0]);
-                return firstWordComesOut.split(' ')[0];  // files(first word of each)ComeOut
-            });
-        });
         console.log('expected', expected);
-        console.log('getResults', getResults);
+        console.log('firstWord', firstWord);
+
         done();
     });
 });
