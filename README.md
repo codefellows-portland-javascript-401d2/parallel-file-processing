@@ -1,6 +1,6 @@
 # Parallel File Processing
 
-A Javascript module that takes a list of filenames and retrieves the first byte of each file in parallel, but returning the results as an array in the same order as the list of files that were provided.
+A Javascript module that takes a list of filenames and retrieves the first word or symbol of each file _in parallel_, but returning the results as an array in the same order as the list of files that were provided.
 
 ## Requirements
 
