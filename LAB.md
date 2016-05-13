@@ -1,11 +1,10 @@
-![CF](assets/shield-32x32.png) Parallel File Processing
+![CF](http://i.imgur.com/7v5ASc8.png) Parallel File Processing
 ===
 
 ##To Submit this Assignment
   * fork this repository
-  * write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-martypdx`
-  * push to your repository
-  * submit a pull request to this repository
+  * do your work against your repository
+  * when done submit a pull request to this repository/yourname branch
   * submit a link to your PR in canvas
   * write a question and observation on canvas
 
