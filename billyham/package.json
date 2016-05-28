@@ -1,0 +1,26 @@
+{
+  "name": "parallel-file-processing",
+  "version": "1.0.0",
+  "description": "parallel file assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit-test",
+    "unit-test": "mocha",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billyham/parallel-file-processing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/billyham/parallel-file-processing/issues"
+  },
+  "homepage": "https://github.com/billyham/parallel-file-processing#readme",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "gulp": "^3.9.1",
+    "mocha": "^2.4.5"
+  }
+}
